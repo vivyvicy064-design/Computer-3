@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Admin - Irfan Computers</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="brand">🖥️ IRFAN COMPUTERS — ADMIN</div><form method="post" action="/admin/logout"><button class="logout">Logout</button></form></header>
+<main class="admin"><h1>Change Website Pictures</h1><p>Only you can see this page after admin login.</p><div class="gallery admin-gallery">
+<script>
+for(let i=1;i<=4;i++){
+ document.write(`<div class="card"><img id="adminpic${i}" src=""><h3>Picture ${i}</h3><form action="/admin/upload/${i}" method="post" enctype="multipart/form-data"><input type="file" name="image" accept="image/jpeg,image/png,image/webp,image/gif" required><button class="btn" type="submit">Upload / Change</button></form></div>`);
+}
+fetch("/api/images").then(r=>r.json()).then(images=>{
+ for(let i=1;i<=4;i++) if(images[i]) document.getElementById("adminpic"+i).src=images[i];
+});
+</script>
+</div></main>
+</body></html>

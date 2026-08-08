@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irfan Computers</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">🖥️ IRFAN COMPUTERS</div>
+  <nav><a href="#home">Home</a><a href="#products">Products</a><a href="#contact">Contact</a></nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <h1>IRFAN<br>COMPUTERS</h1>
+    <p>Computers & accessories for home, office & gaming.</p>
+    <p class="location">📍 R/o Duderhama, Ganderbal</p>
+    <a class="btn" href="#contact">Contact Us</a>
+  </div>
+  <div class="hero-art">💻</div>
+</section>
+
+<section id="products">
+  <h2>OUR PRODUCTS</h2>
+  <p class="sub">Quality Computers at Affordable Prices</p>
+  <div class="gallery">
+    <div class="card"><img id="pic1" src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=900&q=80"><h3>Desktop Computer</h3></div>
+    <div class="card"><img id="pic2" src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"><h3>Laptop</h3></div>
+    <div class="card"><img id="pic3" src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=900&q=80"><h3>LED Monitor</h3></div>
+    <div class="card"><img id="pic4" src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=900&q=80"><h3>Computer Accessories</h3></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Visit Irfan Computers</h2>
+  <p>📍 R/o Duderhama, Ganderbal, Jammu & Kashmir</p>
+  <a class="btn" href="https://wa.me/" target="_blank">WhatsApp Us</a>
+</section>
+
+<footer>© 2026 Irfan Computers. All Rights Reserved.</footer>
+<script>
+fetch("/api/images").then(r=>r.json()).then(images=>{
+  for(let i=1;i<=4;i++) if(images[i]) document.getElementById("pic"+i).src=images[i];
+});
+</script>
+</body>
+</html>
